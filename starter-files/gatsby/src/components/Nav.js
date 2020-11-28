@@ -1,9 +1,28 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+const NavStyles = styled.nav`
+  margin-bottom: 3rem;
+  ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    text-align: center;
+    list-style: none;
+    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    grid-gap: 2rem;
+    align-items: center;
+  }
+  li {
+    transform: rotate(-2deg);
+    order: 1;
+  }
+`;
 
 export default function Nav() {
   return (
-    <nav>
+    <NavStyles>
       <ul>
         <li>
           <Link to="/">So Hot Right Now</Link>
@@ -21,6 +40,6 @@ export default function Nav() {
           <Link to="/orders">Order Ahead!</Link>
         </li>
       </ul>
-    </nav>
+    </NavStyles>
   );
 }
